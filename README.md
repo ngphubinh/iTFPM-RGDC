@@ -12,25 +12,25 @@ Transcription Factors (TFs) play an important role in gene expression and regula
 
 ## Code
 ### Identifying Transcription Factors
-1. Train model
+1. Train models:
 **train_pssm.py**
 + Input: PSSM files of sequences in the training set
 + Output: 5 CNN models stored in folder saved_models -- this folder will be created during model training
-2. Inference
+2. Inference: 
 **test_pssm.py**
 + Input : PSSM files of sequences in the test set and 5 CNN models which were created during the training process.
 + Output: Sensitivity, Specificity, Accuracy, AUC, MCC (in test.csv)
-3. Using pssm-tool to generate PSSM data from FASTA files
+3. Generate PSSM data from FASTA files
 + Step 1: Download and install NCBI-BLAST: ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/
 + Step 2: Download NR database: ftp://ftp.ncbi.nlm.nih.gov/blast/db/FASTA/nr.gz
 Then go to folder bin in BLAST to run the following commands:
 + Step 3: Format database: formatdb.exe -i <NR Database file> -o T
 + Step 4: psiblast.exe -num_iterations 3 -db <NR Database file> -in_msa <Fasta file> -out_ascii_pssm <PSSM Output file>
-4. System Environments
-Ubuntu 18.04
-Sklearn version 1.0.2
-Keras version 2.8.0
-Tensorflow version 2.8.0
+4. System Environments:
+- Ubuntu 18.04
+- scikit-learn version 1.0.2
+- Keras version 2.8.0
+- Tensorflow version 2.8.0
 
 ### Identifying Transcription Factors Prefer Methylated DNA
 Code and results can be found in file **TFPM.ipynb**
